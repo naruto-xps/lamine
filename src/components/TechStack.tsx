@@ -27,7 +27,7 @@ const TechStack = () => {
           name: "Angular",
           icon: "🅰️",
           level: 90,
-          experience: "3+ ans",
+          experience: "2+ ans",
           description: "Framework principal pour mes applications entreprise. Maîtrise complète d'Angular 15+, RxJS, NgRx pour la gestion d'état, et Angular Material.",
           projects: ["SamaSchool Platform", "E-commerce Dashboard", "Analytics Tool"],
           advantages: ["Architecture modulaire", "TypeScript natif", "Écosystème riche"]
@@ -45,19 +45,19 @@ const TechStack = () => {
           name: "TypeScript",
           icon: "🔷",
           level: 88,
-          experience: "3+ ans",
+          experience: "1+ ans",
           description: "Langage de choix pour tous mes projets. Typage fort, interfaces complexes, et intégration parfaite avec Angular et React.",
           projects: ["Tous mes projets récents"],
           advantages: ["Typage statique", "IntelliSense", "Moins d'erreurs"]
         },
         {
-          name: "Tailwind CSS",
-          icon: "💨",
+          name: "Bootstrap",
+          icon: "🎨",
           level: 90,
-          experience: "2+ ans",
-          description: "Framework CSS utilitaire pour un développement rapide et cohérent. Maîtrise des composants custom et du design system.",
+          experience: "1+ ans",
+          description: "Framework CSS pour un développement rapide et responsive. Maîtrise des composants Bootstrap, système de grille, et personnalisation avec Sass.",
           projects: ["Portfolio", "Dashboards", "Landing Pages"],
-          advantages: ["Développement rapide", "Personnalisable", "Petite taille finale"]
+          advantages: ["Développement rapide", "Responsive design", "Composants prêts"]
         }
       ]
     },
@@ -70,29 +70,29 @@ const TechStack = () => {
           name: "Laravel",
           icon: "🐘",
           level: 92,
-          experience: "4+ ans",
+          experience: "1+ ans",
           description: "Framework PHP principal. Maîtrise d'Eloquent ORM, Queue Jobs, Events, API Resources, et écosystème Laravel (Horizon, Telescope).",
           projects: ["API E-commerce", "SaaS Platform", "CRM System"],
           advantages: ["Eloquent ORM", "Écosystème complet", "Communauté active"]
         },
         {
-          name: "Node.js",
-          icon: "🟢",
+          name: "Spring Boot",
+          icon: "☕",
           level: 88,
-          experience: "3+ ans",
-          description: "Pour les APIs rapides et les applications real-time. Express.js, Socket.io, et intégration avec des bases de données NoSQL.",
-          projects: ["Chat Applications", "Real-time APIs", "Microservices"],
-          advantages: ["JavaScript fullstack", "Performance", "npm ecosystem"]
-        },
-        {
-          name: "REST API",
-          icon: "🔗",
-          level: 88,
-          experience: "4+ ans",
-          description: "Conception d'APIs RESTful respectant les standards. Documentation Swagger, versioning, et bonnes pratiques de sécurité.",
-          projects: ["Toutes mes applications"],
-          advantages: ["Standard universel", "Cacheable", "Stateless"]
+          experience: "1+ ans",
+          description: "Framework Java pour le développement d'applications enterprise. Maîtrise de Spring Security, Spring Data JPA, Spring Cloud, et microservices.",
+          projects: ["Enterprise APIs", "Microservices", "Banking System"],
+          advantages: ["Enterprise ready", "Spring ecosystem", "Performance"]
         }
+        // {
+        //   name: "REST API",
+        //   icon: "🔗",
+        //   level: 88,
+        //   experience: "4+ ans",
+        //   description: "Conception d'APIs RESTful respectant les standards. Documentation Swagger, versioning, et bonnes pratiques de sécurité.",
+        //   projects: ["Toutes mes applications"],
+        //   advantages: ["Standard universel", "Cacheable", "Stateless"]
+        // }
       ]
     },
     {
@@ -104,7 +104,7 @@ const TechStack = () => {
           name: "PostgreSQL",
           icon: "🐘",
           level: 88,
-          experience: "3+ ans",
+          experience: "1+ ans",
           description: "SGBD relationnel avancé. Maîtrise des requêtes complexes, indexation, fonctions stockées, et optimisation de performance.",
           projects: ["Applications entreprise", "Analytics Platform"],
           advantages: ["ACID compliance", "Extensible", "Performance"]
@@ -113,7 +113,7 @@ const TechStack = () => {
           name: "MongoDB",
           icon: "🍃",
           level: 82,
-          experience: "2+ ans",
+          experience: "1+ ans",
           description: "Base NoSQL pour les données flexibles. Aggregation pipeline, indexing, et intégration avec Node.js via Mongoose.",
           projects: ["Chat Apps", "Content Management", "Logs System"],
           advantages: ["Schéma flexible", "Horizontal scaling", "JSON natif"]
@@ -122,7 +122,7 @@ const TechStack = () => {
           name: "Redis",
           icon: "📦",
           level: 78,
-          experience: "2+ ans",
+          experience: "1+ ans",
           description: "Cache en mémoire et broker de messages. Sessions, cache de requêtes, et queues pour les tâches asynchrones.",
           projects: ["Cache système", "Sessions", "Background jobs"],
           advantages: ["Ultra rapide", "Structures de données", "Pub/Sub"]
@@ -138,7 +138,7 @@ const TechStack = () => {
           name: "Docker",
           icon: "🐳",
           level: 85,
-          experience: "2+ ans",
+          experience: "1+ ans",
           description: "Containerisation pour le développement et la production. Docker Compose pour les environnements multi-services.",
           projects: ["Tous les projets récents"],
           advantages: ["Isolation", "Portabilité", "Reproductibilité"]
@@ -147,7 +147,7 @@ const TechStack = () => {
           name: "Git",
           icon: "📝",
           level: 92,
-          experience: "5+ ans",
+          experience: "2+ ans",
           description: "Maîtrise complète de Git, Git Flow, branching strategies, et collaboration en équipe via GitHub/GitLab.",
           projects: ["Tous mes projets"],
           advantages: ["Versioning", "Collaboration", "Branching"]

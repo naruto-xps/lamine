@@ -2,41 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Portfolio Design System for Lamine Kama - Modern & Professional 
-All colors MUST be HSL.
-*/
+/* Portfolio Design System for Lamine Kama - Modern & Professional */
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
+    /* Light theme - Modern and vibrant */
+    --background: 220 14% 96%;
     --foreground: 220 26% 14%;
-
     --card: 0 0% 100%;
     --card-foreground: 220 26% 14%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 220 26% 14%;
-
     --primary: 220 91% 56%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 220 91% 70%;
-
     --secondary: 220 14% 96%;
     --secondary-foreground: 220 26% 14%;
-
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
-
     --accent: 47 96% 53%;
     --accent-foreground: 220 26% 14%;
-
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 220 91% 56%;
-
+    --radius: 0.5rem;
+    
     /* Portfolio specific colors */
     --tech-bg: 220 14% 97%;
     --tech-hover: 220 91% 56%;
@@ -44,56 +35,37 @@ All colors MUST be HSL.
     --gradient-accent: linear-gradient(135deg, hsl(47 96% 53%), hsl(45 93% 47%));
     --shadow-elegant: 0 10px 40px -10px hsl(220 91% 56% / 0.2);
     --shadow-glow: 0 0 30px hsl(220 91% 70% / 0.3);
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Chart colors */
+    --chart-1: 220 91% 56%;
+    --chart-2: 47 96% 53%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 262 83% 58%;
+    --chart-5: 0 84% 60%;
   }
 
   .dark {
+    /* Dark theme - Professional and modern */
     --background: 220 27% 6%;
     --foreground: 220 14% 96%;
-
     --card: 220 27% 8%;
     --card-foreground: 220 14% 96%;
-
     --popover: 220 27% 8%;
     --popover-foreground: 220 14% 96%;
-
     --primary: 220 91% 60%;
     --primary-foreground: 220 27% 6%;
-    --primary-glow: 220 91% 75%;
-
     --secondary: 220 17% 14%;
     --secondary-foreground: 220 14% 96%;
-
     --muted: 220 17% 14%;
     --muted-foreground: 220 9% 54%;
-
     --accent: 47 96% 58%;
     --accent-foreground: 220 27% 6%;
-
     --destructive: 0 84% 60%;
     --destructive-foreground: 220 14% 96%;
-
     --border: 220 17% 14%;
     --input: 220 17% 14%;
     --ring: 220 91% 60%;
-
+    
     /* Dark mode portfolio colors */
     --tech-bg: 220 17% 12%;
     --tech-hover: 220 91% 60%;
@@ -101,14 +73,13 @@ All colors MUST be HSL.
     --gradient-accent: linear-gradient(135deg, hsl(47 96% 58%), hsl(45 93% 52%));
     --shadow-elegant: 0 10px 40px -10px hsl(220 91% 60% / 0.3);
     --shadow-glow: 0 0 30px hsl(220 91% 75% / 0.4);
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Dark chart colors */
+    --chart-1: 220 91% 60%;
+    --chart-2: 47 96% 58%;
+    --chart-3: 142 76% 42%;
+    --chart-4: 262 83% 64%;
+    --chart-5: 0 84% 64%;
   }
 }
 
@@ -116,8 +87,352 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.8) 100%);
+  }
+  
+  .bg-gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--primary)) 100%);
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.1) 0%, hsl(var(--accent) / 0.1) 100%);
+  }
+
+  .shadow-elegant {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  .shadow-glow-accent {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.3);
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient-primary {
+    border-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.5)) 1;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-rotate-in {
+    animation: rotateIn 0.6s ease-out forwards;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .animate-gradient-shift {
+    animation: gradientShift 3s ease-in-out infinite;
+  }
+
+  .animate-text-reveal {
+    animation: textReveal 0.8s ease-out forwards;
+  }
+
+  .animate-nav-highlight {
+    animation: navHighlight 0.3s ease-out forwards;
+  }
+
+  .animate-progress-fill {
+    animation: progressFill 0.8s ease-out forwards;
+  }
+
+  .animate-step-complete {
+    animation: stepComplete 0.4s ease-out forwards;
+  }
+
+  .animate-keyboard-press {
+    animation: keyboardPress 0.1s ease-out forwards;
+  }
+
+  .animate-typing {
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.6);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navHighlight {
+  from {
+    background-color: transparent;
+    transform: scale(1);
+  }
+  to {
+    background-color: hsl(var(--primary) / 0.1);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width, 100%);
+  }
+}
+
+@keyframes stepComplete {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes keyboardPress {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: hsl(var(--primary));
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -59,8 +59,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       title: "Email",
-      value: "lamine.kama@example.com",
-      href: "mailto:lamine.kama@example.com"
+      value: "laminekama038@gmail.com",
+      href: "mailto:laminekama038@gmail.com"
     },
     {
       icon: <Phone className="w-5 h-5" />,
@@ -80,7 +80,7 @@ const Contact = () => {
     {
       icon: <Github className="w-5 h-5" />,
       name: "GitHub",
-      href: "https://github.com/laminek",
+      href: "https://github.com/naruto-xps",
       color: "hover:text-foreground"
     },
     {
@@ -92,7 +92,7 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       name: "Email",
-      href: "mailto:lamine.kama@example.com",
+      href: "mailto:laminekama038@gmail.com",
       color: "hover:text-primary"
     }
   ];

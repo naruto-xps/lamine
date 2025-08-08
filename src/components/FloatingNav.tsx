@@ -11,7 +11,6 @@ const FloatingNav = () => {
     { id: "home", icon: Home, label: "Accueil" },
     { id: "about", icon: User, label: "À propos" },
     { id: "services", icon: Settings, label: "Services" },
-    { id: "skills", icon: Code, label: "Compétences" },
     { id: "projects", icon: FolderOpen, label: "Projets" },
     { id: "contact", icon: MessageSquare, label: "Contact" },
   ];

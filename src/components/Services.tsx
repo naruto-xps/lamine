@@ -9,10 +9,33 @@ import {
   Code, 
   Database, 
   Smartphone,
-  Rocket
+  Rocket,
+  ArrowRight,
+  Sparkles
 } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Services = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const element = document.getElementById("services");
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const services = [
     {
       icon: <Globe className="w-8 h-8" />,
@@ -100,9 +123,9 @@ const Services = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in">
+          <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Mes <span className="bg-gradient-primary bg-clip-text text-transparent">services</span>
+              Mes <span className="bg-gradient-primary bg-clip-text text-transparent animate-gradient-shift bg-[length:200%_200%]">services</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Des solutions complètes pour donner vie à vos projets web, du concept à la mise en production
@@ -114,48 +137,70 @@ const Services = () => {
             {services.map((service, index) => (
               <Card 
                 key={service.title}
-                className="border-0 shadow-elegant hover:shadow-glow transition-all duration-300 group animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`border-0 shadow-elegant hover:shadow-glow transition-all duration-700 transform hover:scale-105 hover:-rotate-1 group relative overflow-hidden ${
+                  isVisible ? 'animate-slide-in-bottom' : 'opacity-0 translate-y-20'
+                }`}
+                style={{ 
+                  animationDelay: `${index * 0.2}s`,
+                  transitionDelay: `${index * 0.1}s`
+                }}
               >
-                <CardContent className="p-8">
+                {/* Animated background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Floating particles */}
+                <div className="absolute top-4 right-4 w-2 h-2 bg-primary/30 rounded-full animate-float opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-4 left-4 w-1 h-1 bg-accent/40 rounded-full animate-float opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ animationDelay: "0.5s" }}></div>
+                
+                <CardContent className="p-8 relative z-10">
                   <div className="flex items-start mb-6">
-                    <div className={`w-16 h-16 rounded-xl ${service.bgColor} flex items-center justify-center mr-4 group-hover:shadow-glow transition-all duration-300`}>
-                      <div className={service.color}>
+                    <div className={`w-16 h-16 rounded-xl ${service.bgColor} flex items-center justify-center mr-4 group-hover:shadow-glow transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-12 relative overflow-hidden`}>
+                      {/* Shimmer effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      <div className={`${service.color} relative z-10`}>
                         {service.icon}
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                      <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                         {service.title}
                       </h3>
-                      <p className="text-muted-foreground">
+                      <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                         {service.description}
                       </p>
                     </div>
                   </div>
 
-                  {/* Features */}
+                  {/* Features with staggered animation */}
                   <div className="mb-6">
-                    <h4 className="font-semibold text-foreground mb-3">Inclus :</h4>
+                    <h4 className="font-semibold text-foreground mb-3 flex items-center">
+                      <Sparkles className="w-4 h-4 mr-2 text-primary" />
+                      Inclus :
+                    </h4>
                     <ul className="space-y-2">
                       {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-muted-foreground">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3"></div>
+                        <li 
+                          key={featureIndex} 
+                          className="flex items-center text-muted-foreground group-hover:text-foreground transition-all duration-300 transform hover:translate-x-2"
+                          style={{ transitionDelay: `${featureIndex * 0.1}s` }}
+                        >
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3 animate-pulse-glow"></div>
                           {feature}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* Technologies */}
+                  {/* Technologies with hover effects */}
                   <div className="mb-6">
                     <h4 className="font-semibold text-foreground mb-3">Technologies :</h4>
                     <div className="flex flex-wrap gap-2">
-                      {service.technologies.map((tech) => (
+                      {service.technologies.map((tech, techIndex) => (
                         <Badge 
                           key={tech}
                           variant="secondary"
-                          className="bg-tech-bg hover:bg-tech-hover hover:text-primary-foreground transition-all duration-300"
+                          className="bg-tech-bg hover:bg-tech-hover hover:text-primary-foreground transition-all duration-300 transform hover:scale-105 hover:-rotate-1"
+                          style={{ transitionDelay: `${techIndex * 0.05}s` }}
                         >
                           {tech}
                         </Badge>
@@ -163,10 +208,10 @@ const Services = () => {
                     </div>
                   </div>
 
-                  {/* CTA */}
+                  {/* Enhanced CTA Button */}
                   <Button 
                     variant="outline" 
-                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 transform hover:scale-105 relative overflow-hidden"
                     onClick={() => {
                       const element = document.querySelector("#contact");
                       if (element) {
@@ -174,15 +219,20 @@ const Services = () => {
                       }
                     }}
                   >
-                    Discuter de ce service
+                    <span className="relative z-10 flex items-center">
+                      Discuter de ce service
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
+                    {/* Button shimmer effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* Additional Services */}
-          <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          {/* Additional Services with enhanced animations */}
+          <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: "0.4s" }}>
             <h3 className="text-2xl font-semibold text-center mb-8 text-foreground">
               Services complémentaires
             </h3>
@@ -190,19 +240,31 @@ const Services = () => {
               {additionalServices.map((service, index) => (
                 <Card 
                   key={service.title}
-                  className="border-0 shadow-elegant hover:shadow-glow transition-all duration-300 transform hover:scale-105 group"
-                  style={{ animationDelay: `${0.5 + (index * 0.1)}s` }}
+                  className={`border-0 shadow-elegant hover:shadow-glow transition-all duration-500 transform hover:scale-105 hover:rotate-1 group relative overflow-hidden ${
+                    isVisible ? 'animate-zoom-in' : 'opacity-0 scale-50'
+                  }`}
+                  style={{ 
+                    animationDelay: `${0.5 + (index * 0.1)}s`,
+                    transitionDelay: `${index * 0.1}s`
+                  }}
                 >
-                  <CardContent className="p-6 text-center">
+                  {/* Card background animation */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <CardContent className="p-6 text-center relative z-10">
                     <div className="mb-4 flex justify-center">
-                      <div className="w-12 h-12 rounded-full bg-tech-bg group-hover:bg-tech-hover group-hover:text-primary-foreground flex items-center justify-center transition-all duration-300">
-                        {service.icon}
+                      <div className="w-12 h-12 rounded-full bg-tech-bg group-hover:bg-tech-hover group-hover:text-primary-foreground flex items-center justify-center transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-12 relative overflow-hidden">
+                        {/* Icon shimmer */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                        <div className="relative z-10">
+                          {service.icon}
+                        </div>
                       </div>
                     </div>
-                    <h4 className="font-semibold text-foreground mb-2">
+                    <h4 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                       {service.title}
                     </h4>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-muted-foreground text-sm group-hover:text-foreground transition-colors duration-300">
                       {service.description}
                     </p>
                   </CardContent>
@@ -211,35 +273,37 @@ const Services = () => {
             </div>
           </div>
 
-          {/* Process CTA */}
-          <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: "0.8s" }}>
-            <Card className="border-0 bg-gradient-primary shadow-glow">
-              <CardContent className="p-8">
+          {/* Enhanced Process CTA */}
+          <div className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: "0.8s" }}>
+            <Card className="border-0 bg-gradient-primary shadow-glow hover:shadow-glow-accent transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
+              {/* Animated background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary animate-gradient-shift bg-[length:200%_200%] opacity-20"></div>
+              
+              <CardContent className="p-8 relative z-10">
                 <h3 className="text-2xl font-bold text-primary-foreground mb-4">
                   Comment je travaille ?
                 </h3>
                 <div className="grid md:grid-cols-4 gap-6 mb-6">
-                  <div className="text-primary-foreground">
-                    <div className="text-3xl font-bold mb-2">1</div>
-                    <div className="text-sm opacity-90">Analyse des besoins</div>
-                  </div>
-                  <div className="text-primary-foreground">
-                    <div className="text-3xl font-bold mb-2">2</div>
-                    <div className="text-sm opacity-90">Conception & planning</div>
-                  </div>
-                  <div className="text-primary-foreground">
-                    <div className="text-3xl font-bold mb-2">3</div>
-                    <div className="text-sm opacity-90">Développement agile</div>
-                  </div>
-                  <div className="text-primary-foreground">
-                    <div className="text-3xl font-bold mb-2">4</div>
-                    <div className="text-sm opacity-90">Livraison & support</div>
-                  </div>
+                  {[
+                    { step: "1", title: "Analyse des besoins" },
+                    { step: "2", title: "Conception & planning" },
+                    { step: "3", title: "Développement agile" },
+                    { step: "4", title: "Livraison & support" }
+                  ].map((item, index) => (
+                    <div key={index} className="text-primary-foreground group">
+                      <div className="text-3xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">
+                        {item.step}
+                      </div>
+                      <div className="text-sm opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                        {item.title}
+                      </div>
+                    </div>
+                  ))}
                 </div>
                 <Button 
                   variant="secondary"
                   size="lg"
-                  className="bg-white text-primary hover:bg-white/90"
+                  className="bg-white text-primary hover:bg-white/90 transform hover:scale-105 transition-all duration-300 relative overflow-hidden"
                   onClick={() => {
                     const element = document.querySelector("#contact");
                     if (element) {
@@ -247,7 +311,12 @@ const Services = () => {
                     }
                   }}
                 >
-                  Démarrer un projet
+                  <span className="relative z-10 flex items-center">
+                    Démarrer un projet
+                    <Rocket className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform duration-300" />
+                  </span>
+                  {/* Button shimmer */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </Button>
               </CardContent>
             </Card>

@@ -296,41 +296,6 @@ const Projects = () => {
             ))}
           </div>
 
-          {/* Enhanced Call to Action */}
-          <div className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: "0.8s" }}>
-            <Card className="border-0 shadow-elegant bg-gradient-accent text-accent-foreground hover:shadow-glow-accent transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
-              {/* Animated background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-accent via-primary to-accent animate-gradient-shift bg-[length:200%_200%] opacity-20"></div>
-              
-              <CardContent className="p-8 relative z-10">
-                <h3 className="text-2xl font-bold mb-4">
-                  Vous avez un projet en tête ?
-                </h3>
-                <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
-                  Je serais ravi de discuter de votre prochain projet et de voir comment 
-                  mes compétences peuvent vous aider à le concrétiser.
-                </p>
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  onClick={() => {
-                    const element = document.querySelector("#contact");
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                  className="transform hover:scale-105 transition-all duration-300 shadow-elegant relative overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center">
-                    Démarrer un projet
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </span>
-                  {/* Button shimmer */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </section>

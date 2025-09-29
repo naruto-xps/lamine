@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Target, Zap, Users } from "lucide-react";
+import { Heart, Target, Zap, Users, GraduationCap, BookOpen, Lightbulb, Globe } from "lucide-react";
 
 const About = () => {
   const values = [
@@ -11,18 +11,18 @@ const About = () => {
     },
     {
       icon: <Target className="w-6 h-6" />,
-      title: "Précision",
-      description: "Attention aux détails et qualité du code"
+      title: "Apprentissage",
+      description: "Curiosité et envie de progresser continuellement"
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Performance",
-      description: "Applications rapides et optimisées"
+      title: "Innovation",
+      description: "Créativité dans la résolution de problèmes"
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: "Collaboration",
-      description: "Travail d'équipe et communication"
+      description: "Travail d'équipe et partage de connaissances"
     }
   ];
 
@@ -41,7 +41,7 @@ const About = () => {
               À propos de <span className="bg-gradient-primary bg-clip-text text-transparent">moi</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Découvrez mon parcours, mes valeurs et ma passion pour le développement web
+              Découvrez mon parcours académique, mes projets et ma passion pour le développement web
             </p>
           </div>
 
@@ -55,30 +55,45 @@ const About = () => {
                   </h3>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
-                      Passionné par la création d'applications web performantes et intuitives, 
-                      je conçois des solutions robustes du backend au frontend. Fort d'une 
-                      solide expérience avec <span className="text-primary font-medium">Laravel</span>, 
+                      Je suis actuellement <span className="text-primary font-medium">étudiant en 2ème année</span> à 
+                      l'<span className="text-accent font-medium">ISEP-AT</span>, où je développe mes compétences 
+                      en développement web et en technologies modernes. Passionné par la création d'applications 
+                      web performantes et intuitives, je me spécialise dans les technologies comme 
+                      <span className="text-primary font-medium"> Laravel</span>, 
                       <span className="text-primary font-medium"> Angular</span>, 
-                      <span className="text-primary font-medium"> Node.js</span> et 
-                      <span className="text-primary font-medium"> PostgreSQL</span>, 
-                      j'allie créativité, rigueur et efficacité.
+                      <span className="text-primary font-medium"> React</span> et 
+                      <span className="text-primary font-medium"> Node.js</span>.
                     </p>
                     <p>
                       Basé à <span className="text-accent font-medium">Dakar, Sénégal</span>, 
-                      je travaille avec des équipes locales et internationales pour créer 
-                      des expériences web exceptionnelles. Mon approche combine les meilleures 
-                      pratiques de développement avec une attention particulière à l'expérience utilisateur.
+                      je combine mes études avec des projets personnels et des collaborations 
+                      pour enrichir mon expérience pratique. Mon approche allie théorie académique 
+                      et application concrète pour créer des solutions web innovantes.
                     </p>
                     <p>
-                      Toujours à l'affût des dernières technologies, je me forme continuellement 
-                      pour offrir des solutions modernes et évolutives à mes clients et collaborateurs.
+                      Toujours curieux et avide d'apprendre, je me forme continuellement aux 
+                      dernières technologies et méthodologies pour préparer mon avenir professionnel 
+                      dans le développement web.
                     </p>
+                  </div>
+
+                  {/* Education Info */}
+                  <div className="mt-6 p-4 bg-gradient-primary/10 rounded-lg border border-primary/20">
+                    <div className="flex items-center mb-3">
+                      <GraduationCap className="w-5 h-5 text-primary mr-2" />
+                      <h4 className="font-semibold text-foreground">Formation actuelle</h4>
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      <p><span className="font-medium">ISEP-AT</span> - 2ème année</p>
+                      <p>Développement web et technologies modernes</p>
+                    </div>
                   </div>
 
                   {/* Tech Stack */}
                   <div className="mt-8">
-                    <h4 className="text-lg font-semibold mb-4 text-foreground">
-                      Technologies favorites
+                    <h4 className="text-lg font-semibold mb-4 text-foreground flex items-center">
+                      <BookOpen className="w-5 h-5 mr-2 text-primary" />
+                      Technologies étudiées
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {techStack.map((tech) => (
@@ -125,22 +140,37 @@ const About = () => {
                 ))}
               </div>
 
-              {/* Stats */}
+              {/* Updated Stats for Student */}
               <Card className="mt-8 border-0 shadow-elegant bg-gradient-primary">
                 <CardContent className="p-6">
                   <div className="grid grid-cols-3 gap-4 text-center text-primary-foreground">
                     <div>
-                      <div className="text-2xl font-bold">5+</div>
-                      <div className="text-sm opacity-90">Années d'expérience</div>
+                      <div className="text-2xl font-bold">2ème</div>
+                      <div className="text-sm opacity-90">Année d'études</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold">50+</div>
+                      <div className="text-2xl font-bold">3+</div>
                       <div className="text-sm opacity-90">Projets réalisés</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold">100%</div>
-                      <div className="text-sm opacity-90">Clients satisfaits</div>
+                      <div className="text-sm opacity-90">Motivation</div>
                     </div>
+                  </div>
+                </CardContent>
+              </Card>
+{/* Additional Info Card */}
+              <Card className="mt-6 border-0 shadow-elegant bg-gradient-accent/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Lightbulb className="w-5 h-5 text-accent mr-2" />
+                    <h4 className="font-semibold text-foreground">Objectifs</h4>
+                  </div>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <p>• Maîtriser les technologies web modernes</p>
+                    <p>• Développer des projets innovants</p>
+                    <p>• Préparer mon insertion professionnelle</p>
+                    <p>• Contribuer à l'écosystème tech sénégalais</p>
                   </div>
                 </CardContent>
               </Card>

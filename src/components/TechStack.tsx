@@ -50,7 +50,7 @@ const TechStack = () => {
         {
           name: "Angular",
           icon: "🅰️",
-          level: 90,
+          level: 70,
           experience: "2+ ans",
           description: "Framework principal pour mes applications entreprise. Maîtrise complète d'Angular 15+, RxJS, NgRx pour la gestion d'état, et Angular Material.",
           projects: ["SamaSchool Platform", "E-commerce Dashboard", "Analytics Tool"],
@@ -59,7 +59,7 @@ const TechStack = () => {
         {
           name: "React",
           icon: "⚛️",
-          level: 85,
+          level: 65,
           experience: "2+ ans",
           description: "Utilisé pour des projets modernes et des prototypes rapides. Hooks, Context API, et intégration avec Next.js pour le SSR.",
           projects: ["Portfolio Sites", "Landing Pages", "MVP Prototypes"],
@@ -93,7 +93,7 @@ const TechStack = () => {
         {
           name: "Laravel",
           icon: "🐘",
-          level: 92,
+          level: 60,
           experience: "1+ ans",
           description: "Framework PHP principal. Maîtrise d'Eloquent ORM, Queue Jobs, Events, API Resources, et écosystème Laravel (Horizon, Telescope).",
           projects: ["API E-commerce", "SaaS Platform", "CRM System"],
@@ -102,7 +102,7 @@ const TechStack = () => {
         {
           name: "Spring Boot",
           icon: "☕",
-          level: 88,
+          level: 40,
           experience: "1+ ans",
           description: "Framework Java pour le développement d'applications enterprise. Maîtrise de Spring Security, Spring Data JPA, Spring Cloud, et microservices.",
           projects: ["Enterprise APIs", "Microservices", "Banking System"],
@@ -136,7 +136,7 @@ const TechStack = () => {
         {
           name: "Redis",
           icon: "📦",
-          level: 78,
+          level: 30,
           experience: "1+ ans",
           description: "Cache en mémoire et broker de messages. Sessions, cache de requêtes, et queues pour les tâches asynchrones.",
           projects: ["Cache système", "Sessions", "Background jobs"],
@@ -152,7 +152,7 @@ const TechStack = () => {
         {
           name: "Docker",
           icon: "🐳",
-          level: 85,
+          level: 55,
           experience: "1+ ans",
           description: "Containerisation pour le développement et la production. Docker Compose pour les environnements multi-services.",
           projects: ["Tous les projets récents"],

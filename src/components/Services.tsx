@@ -233,7 +233,7 @@ const Services = () => {
 
           {/* Additional Services with enhanced animations */}
           <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: "0.4s" }}>
-            <h3 className="text-2xl font-semibold text-center mb-8 text-foreground">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-center py-2">
               Services complémentaires
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -273,54 +273,7 @@ const Services = () => {
             </div>
           </div>
 
-          {/* Enhanced Process CTA */}
-          <div className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: "0.8s" }}>
-            <Card className="border-0 bg-gradient-primary shadow-glow hover:shadow-glow-accent transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
-              {/* Animated background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary animate-gradient-shift bg-[length:200%_200%] opacity-20"></div>
-              
-              <CardContent className="p-8 relative z-10">
-                <h3 className="text-2xl font-bold text-primary-foreground mb-4">
-                  Comment je travaille ?
-                </h3>
-                <div className="grid md:grid-cols-4 gap-6 mb-6">
-                  {[
-                    { step: "1", title: "Analyse des besoins" },
-                    { step: "2", title: "Conception & planning" },
-                    { step: "3", title: "Développement agile" },
-                    { step: "4", title: "Livraison & support" }
-                  ].map((item, index) => (
-                    <div key={index} className="text-primary-foreground group">
-                      <div className="text-3xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">
-                        {item.step}
-                      </div>
-                      <div className="text-sm opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                        {item.title}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <Button 
-                  variant="secondary"
-                  size="lg"
-                  className="bg-white text-primary hover:bg-white/90 transform hover:scale-105 transition-all duration-300 relative overflow-hidden"
-                  onClick={() => {
-                    const element = document.querySelector("#contact");
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                >
-                  <span className="relative z-10 flex items-center">
-                    Démarrer un projet
-                    <Rocket className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform duration-300" />
-                  </span>
-                  {/* Button shimmer */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+          
         </div>
       </div>
     </section>

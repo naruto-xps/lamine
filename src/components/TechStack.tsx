@@ -82,6 +82,15 @@ const TechStack = () => {
           description: "Framework CSS pour un développement rapide et responsive. Maîtrise des composants Bootstrap, système de grille, et personnalisation avec Sass.",
           projects: ["Portfolio", "Dashboards", "Landing Pages"],
           advantages: ["Développement rapide", "Responsive design", "Composants prêts"]
+        },
+        {
+          name: "flutter",
+          icon: "🦋",
+          level: 40,
+          experience: "1+ ans",
+          description: "Framework UI pour la création d'applications nativement compilées pour mobile, web et bureau à partir d'une seule base de code.",
+          projects: ["Mobile Apps", "Web Apps"],
+          advantages: ["Développement rapide", "UI expressive", "Performance native"]
         }
       ]
     },

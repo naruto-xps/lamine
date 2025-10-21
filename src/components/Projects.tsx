@@ -2,9 +2,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink, Eye, Star, ArrowRight, Sparkles } from "lucide-react";
-import ecommerceImage from "@/assets/project-ecommerce.jpg";
-import taskManagerImage from "@/assets/project-task-manager.jpg";
-import analyticsImage from "@/assets/project-analytics.jpg";
+import ecommerceImage from "@/assets/lamine.png";
+import taskManagerImage from "@/assets/bbb.png";
+import analyticsImage from "@/assets/lll.png";
 import { useState, useEffect } from "react";
 
 const Projects = () => {
@@ -31,8 +31,8 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "Plateforme e-commerce complète avec gestion des commandes, paiements sécurisés et interface d'administration avancée. Développée avec Laravel pour le backend et Angular pour le frontend.",
+      title: "Agrilegeey, une plateforme e-commerce agricole",
+      description: "Agrilegeey est une plateforme e-commerce agricole conçue pour faciliter la mise en relation entre les producteurs, commerçants et acheteurs de produits agricoles.",
       image: ecommerceImage,
       technologies: ["Laravel", "Angular", "PostgreSQL", "Stripe", "Docker"],
       githubUrl: "https://github.com/laminek/ecommerce-platform",
@@ -41,22 +41,11 @@ const Projects = () => {
       category: "Full Stack"
     },
     {
-      id: 2,
-      title: "Task Management App",
-      description: "Application de gestion de tâches collaborative avec système de notifications en temps réel, tableaux Kanban et rapports d'activité. Architecture MERN stack.",
-      image: taskManagerImage,
-      technologies: ["React", "Node.js", "MongoDB", "Socket.io", "JWT"],
-      githubUrl: "https://github.com/laminek/task-manager",
-      liveUrl: "https://tasks.laminek.dev",
-      featured: true,
-      category: "Web App"
-    },
-    {
       id: 3,
       title: "Analytics Dashboard",
       description: "Tableau de bord d'analyse de données avec visualisations interactives, filtres avancées et exports PDF. Intégration avec plusieurs sources de données.",
       image: analyticsImage,
-      technologies: ["React", "D3.js", "Node.js", "PostgreSQL", "Redis"],
+      technologies: ["Angular", "chart.js", "Laravel", "PostgreSQL"],
       githubUrl: "https://github.com/laminek/analytics-dashboard",
       liveUrl: "https://analytics.laminek.dev",
       featured: false,
